@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+<center>
+    <h1>Welcome to MUET Student Form</h1>
+    <form action="new" method="post">
+        {% csrf_token %}
+        Enter Name: <input type="text" name="name"><br><br>
+        Enter Roll No: <input type="text" name="roll"><br><br>
+        Department Name: <input type="text" name="dept"><br><br>
+        Admission date: <input type="date" name="date" placeholder="YYYY-MM-DD" required pattern="(?:19|20)\[0-9\]{2}-(?:(?:0\[1-9\]|1\[0-2\])/(?:0\[1-9\]|1\[0-9\]|2\[0-9\])|(?:(?!02)(?:0\[1-9\]|1\[0-2\])/(?:30))|(?:(?:0\[13578\]|1\[02\])-31))" title="Enter a date in this format YYYY/MM/DD"/>
+        <br><br>
+        upload image: <input type="file" name="upload" id=""><br><br>
+        <button type="submit">save data</button>
+    </form>
+    <form action="">
+        {{sub}}
+    </form>
+    <br><br><br><br><br>
+    <br><br><br><br>
+    <a href="data"><h1>Show All Data</h1></a>
+</center>
+
+{% endblock%}

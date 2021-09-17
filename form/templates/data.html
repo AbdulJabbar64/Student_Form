@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+<center>
+    <h1>Welcome to MUET Student Form</h1>
+    <form action="name">
+        {% for x in da %}
+        <h3>Your Name: {{x.name}} </h3>
+        <h3>Your Roll No: {{x.rollNa}}</h3>
+        <h3>Your Department Name: {{x.dept}} </h3>
+        <h3>Admission date is: {{x.addmission}}</h3>
+        <img src="{{x.iamge.url}}" height="250" width="250">
+        <br><br><br><br><br><br>
+        <br><br><br>
+        {% endfor %}
+    </form>
+</center>
+
+{% endblock %}
